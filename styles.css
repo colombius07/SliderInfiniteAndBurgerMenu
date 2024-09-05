@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    position: relative;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 21px;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.slider {
+    margin: 20px auto;
+    width: 90%;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(100% * 6);
+    animation: scroll 10s linear infinite;
+}
+
+.slide {
+    min-width: 20%;
+    flex-shrink: 0;
+}
+
+.slide img {
+    width: auto;
+    height: auto;
+    max-height: 300px;
+    display: block;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-10%); }
+    20% { transform: translateX(-20%); }
+    30% { transform: translateX(-30%); }
+    40% { transform: translateX(-40%); }
+    50% { transform: translateX(-50%); }
+    60% { transform: translateX(-60%); }
+    70% { transform: translateX(-70%); }
+    80% { transform: translateX(-80%); }
+    90% { transform: translateX(-90%); }
+    100% { transform: translateX(-100%); }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: auto;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 20px; 
+        box-sizing: border-box;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+
+    .burger {
+        display: flex;
+        margin-right: 20px; 
+        z-index: 1001;
+    }
+
+    .burger.active div {
+        background-color: #fff;
+    }
+
+    .burger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line2 {
+        opacity: 0;
+    }
+
+    .burger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
