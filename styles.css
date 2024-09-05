@@ -64,13 +64,13 @@ nav {
 
 .slide-track {
     display: flex;
-    width: calc(100% * 6);
+    width: 200%;
     animation: scroll 10s linear infinite;
 }
 
 .slide {
-    min-width: 20%;
-    flex-shrink: 0;
+    flex: 1 0 20%;
+    box-sizing: border-box;
 }
 
 .slide img {
@@ -82,16 +82,7 @@ nav {
 
 @keyframes scroll {
     0% { transform: translateX(0); }
-    10% { transform: translateX(-10%); }
-    20% { transform: translateX(-20%); }
-    30% { transform: translateX(-30%); }
-    40% { transform: translateX(-40%); }
-    50% { transform: translateX(-50%); }
-    60% { transform: translateX(-60%); }
-    70% { transform: translateX(-70%); }
-    80% { transform: translateX(-80%); }
-    90% { transform: translateX(-90%); }
-    100% { transform: translateX(-100%); }
+    100% { transform: translateX(-110%); }
 }
 
 @media screen and (max-width: 768px) {
